@@ -127,9 +127,10 @@ class FractionalExperiment:
         if Gp < G_kr:
             print(f'З ймовірністю {1-self.q} дисперсії однорідні.')
         else:
-            print("Необхідно збільшити кількість дослідів")
+            print("Дисперсії неоднорідні. Необхідно збільшити кількість дослідів")
             self.m += 1
             FractionalExperiment(self.n, self.m)
+            if m > 23: exit()
 
         ts = self.student()
         print('\nПеревірка значущості коефіцієнтів за критерієм Стьюдента')
